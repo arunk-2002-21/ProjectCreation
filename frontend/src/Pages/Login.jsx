@@ -30,7 +30,7 @@ const Login = () => {
     });
 
   const handleSubmit = async (e) => {
-    e.prevent();
+    e.preventDefault();
     try{
       const {data} = await axios.post(
         "https://localhost:8080/login",
@@ -62,37 +62,31 @@ const Login = () => {
 
   return (
     <div className='login-background'>
+        <div className='logo'>
+            <img src="/assets/Logo.svg" alt="logo" />
+            <h6 className='logo-heading'>Online Project Management</h6>
+        </div>
       <div className='form-main-container '>
         <div className='form-container'>
-          <h2>Login to get started</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor='email'>Email</label>
-              <input
-                type='email'
-                name='email'
-                value={email}
-                placeholder='Enter your email'
-                onChange={handleOnChange}
-              />
+          <h3>Login to get started</h3>
+          <form onSubmit={handleSubmit} class="needs-validation" novalidate>
+          <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" placeholder="" name="email" id="email" class="form-control" required/>
+                {/* <div class="invalid-feedback">
+                    Email is required 
+                </div> */}
             </div>
-            <div>
-              <label htmlFor='password'>Password</label>
-              <input
-                type='password'
-                name='password'
-                value={password}
-                placeholder='Enter your password'
-                onChange={handleOnChange}
-                
-              />
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" placeholder="" name="password" id="password" class="form-control" required/>
+                {/* <div class="invalid-feedback">
+                    Give a valid password 
+                </div> */}
             </div>
-            <button type='submit'>Login</button>
-            <span>
-              Don't have an account? <Link to={"/signup"}>Signup</Link>
-            </span>
+            <button class="btn-primary">Login</button>
           </form>
-          <ToastContainer/>
+          {/* <ToastContainer/> */}
         </div>
       </div>
     </div>  
