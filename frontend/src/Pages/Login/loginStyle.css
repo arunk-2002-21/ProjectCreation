@@ -9,52 +9,57 @@ html, body {
 }
 
 .login-background {
-  background-image: url('../../public/assets/login-bg-1.svg');
+  background-image: url('../../../public/assets/login-bg-1.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* height: 75vh; */
+  height: 65vh;
   /* width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; /* Center vertically */
+  border-bottom-left-radius: 5rem;
 }
 
 .logo {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem; /* Add spacing below the logo */
+  margin-top: 16rem;
 }
 
 .logo > img {
-  height: 100px; /* Make the logo smaller and proportional */
+  height: 5rem; /* Make the logo smaller and proportional */
   width: auto;
 }
 
 .logo > h6 {
   color: #fff;
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 250;
   text-align: center;
-  margin-left: 15px; /* Adjust spacing between logo and text */
+  margin-left: 1rem; /* Adjust spacing between logo and text */
 }
 
-.form-container {
+.form-main-container {
   background-color: #fff;
   padding: 2rem 3rem;
   border-radius: 0.5rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 0.15);
-  text-align: center;
-  
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .form-container > h3 {
+  text-align: center;
   margin-bottom: 1.5rem;
-  font-size: 1.8rem;
+  font-size: 1.35rem;
   font-weight: 400;
 }
 
@@ -70,26 +75,60 @@ html, body {
 }
 
 .form-container input {
-  border: none;
+  /* border: none; */
   padding: 0.8rem;
-  border-bottom: 1px solid gray;
+  border: 1px solid gray;
   font-size: 1.1rem;
-  outline: none;
+  /* outline: none; */
   transition: border-color 0.3s;
+}
+
+.form-container a{
+  text-decoration: none;
+  color: #005890;
+  font-weight: 400;
+  margin-left: 14rem;
+  
 }
 
 .form-container input:focus {
   border-bottom: 1px solid #005890; /* Highlight input border on focus */
 }
 
+.password-container{
+  position: relative;
+  /* display: flex; */
+}
+
+.password-input{
+  padding-right: 40px;
+}
+
+.toggle-icon{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 20px;
+  height: auto;
+  opacity: 0.6;
+}
+
+.toggle-icon:hover{
+  opacity: 1;
+}
+
 button {
   background-color: #005890;
   color: #fff;
+  width: 50%;
+  align-self: center;
   border: none;
   padding: 0.8rem;
   font-size: 1.1rem;
   cursor: pointer;
-  border-radius: 0.3rem;
+  border-radius: 5rem;
   transition: background-color 0.3s ease;
 }
 
@@ -103,6 +142,28 @@ button:hover {
   margin-top: 1rem;
   display: inline-block;
 }
+
+.is-invalid{
+  border-color: red !important;
+}
+
+/* Remove the default invalid field icon but keep the border */
+input:invalid {
+  box-shadow: none;  /* Removes the exclamation mark icon */
+  appearance: none;
+  outline: none;
+}
+
+input.is-invalid {
+  border: 1px solid red; /* Keep the red border for invalid inputs */
+}
+
+.invalid-feedback{
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
 
 @media (max-width: 576px) {
   .form-container {

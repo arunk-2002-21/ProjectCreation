@@ -1,0 +1,52 @@
+.create-project-main {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center horizontally */
+    max-width: 1200px; /* Restrict max width */
+  }
+  
+  /* Align the entire form vertically and centrally in the page */
+  .container {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: flex-start; /* Align towards the top */
+    min-height: 100vh; /* Full screen height */
+    padding-top: 50px; /* Adjust this to control the form's vertical position */
+  }
+  
+  /* Make textarea and input fields more responsive */
+  textarea.form-control, 
+  input.form-control, 
+  select.form-control {
+    resize: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    row-gap: 5rem;
+  }
+  
+  /* Button styling */
+  button.btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color:#0070D2;
+    border:none;
+    border-radius: 5rem;
+  }
+  
+  /* Extra styling to make labels and status look good */
+  label {
+    font-weight: 375;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  /* Optional: adjust the size of the status text */
+  p strong {
+    font-weight: 600;
+  }
+  
